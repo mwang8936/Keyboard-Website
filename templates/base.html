@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+#Font baumans
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+ /* clears the 'X' from Internet Explorer */
+ input[type=search]::-ms-clear {
+ display: none;
+ width : 0;
+ height: 0;
+ }
+ input[type=search]::-ms-reveal {
+ display: none;
+ width : 0;
+ height: 0;
+ }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+display: none;
+}
+.top_and_bar {
+  position: fixed;
+  background-color: white;
+  top: -5%;
+  left: 0px;
+  width: 100%;
+  height: 33%;
+}
+
+.top_wrapper {
+  position: relative;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 75%;
+  font-size: 1vw;
+}
+
+.top_box {
+  position: absolute;
+  background-color: transparent;
+  height:80%;
+  bottom: 0%;
+  width: 100%;
+  border-top: .2vw solid black;
+  border-bottom: .1vw solid gray;
+}
+
+.Logo {
+  width: 15%;
+  background-color: #02475e;
+  position: absolute;
+  color: #f3bda1;
+  text-align: center;
+  font-size: 380%;
+  font-family: 'Baumans', cursive;
+  top: 20%;
+  left: 7%;
+  padding-left: .5%;
+  padding-right: .5%;
+  padding-top: -.5%;
+  padding-bottom: .5%;
+  margin-top: 1%;
+  font-weight: bold;
+}
+
+
+.container_search {
+  background-color: transparent;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+.search-field {
+  position: relative;
+  width: 100%;
+  height: 4vw;
+  border: .1vw solid black;
+  border-radius: 1vw;
+  outline: none;
+  box-shadow: 0px .5vw .3vw gray;
+  font-size: 200%;
+  margin-top: 2vw;
+  padding-left: 2vw;
+}
+
+.search-button {
+  position: relative;
+  width: 8%;
+  height: 10%;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -10%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.search-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Login {
+  background-color: transparent;
+  position: absolute;
+  top: 20%;
+  left: 87%;
+  color: black;
+  font-weight: 1000;
+  font-size: 2vw;
+  font-family: Arial, sans-serif;
+  text-decoration: underline;
+  margin-top: 1%;
+}
+.Sign_up {
+  background-color: transparent;
+  position: absolute;
+  top: 20%;
+  left: 77%;
+  color: black;
+  font-weight: 1000;
+  font-size: 2vw;
+  font-family: Arial, sans-serif;
+  text-decoration: underline;
+  margin-top: 1%;
+}
+
+.bar {
+  position: relative;
+  height: 25%;
+  width: 100%;
+  background-color: transparent;
+}
+.Home {
+  position: absolute;
+  bottom: 0%;
+  left: 23%;
+  width: 10%;
+  color: black;
+  text-align: center;
+  background-color: transparent;
+  font-size: 1.8vw;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+
+}
+
+.About_us {
+  position:absolute;
+  bottom: 0%;
+  left: 31%;
+  width: 10%;
+  color: black;
+  text-align: center;
+  background-color: transparent;
+  font-size: 1.8vw;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+
+.Gallery {
+  position:absolute;
+  bottom: 0%;
+  left: 49%;
+  width: 10%;
+  color: black;
+  text-align: center;
+  background-color: transparent;
+  font-size: 1.8vw;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+.Discord {
+  position:absolute;
+  bottom: 0%;
+  left: 57%;
+  width: 10%;
+  color: black;
+  text-align: center;
+  background-color: transparent;
+  font-size: 1.8vw;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+.FAQ {
+  position:absolute;
+  bottom: 0%;
+  left: 66%;
+  width: 10%;
+  color: black;
+  text-align: center;
+  background-color: transparent;
+  font-size: 1.8vw;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+.dropbtn {
+  position: relative;
+  color: black;
+  font-size: 1.8vw;
+  font-family: Arial, sans-serif;
+  background-color: transparent;
+  border: none;
+  padding: 18.5%;
+
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 0%;
+  left: 40%;
+  width: 10%;
+  background-color: transparent
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 50%;
+  box-shadow: 0px .2vw .5vw gray;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8% 10%;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: gray;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: gray;}
+
+.fixed-testing {
+ height: 200vh;
+ background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class="top_and_bar">
+  <div class="top_wrapper">
+      <a href="Placement">
+        <div class="Logo">
+            <h>EkoKeys</h>
+        </div>
+      </a>
+
+    <div class="container_search">
+          <form action="/" method="GET" class="form">
+            <input type="search" placeholder="Search" class="search-field" />
+            <button type="submit" class="search-button">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1200px-Magnifying_glass_icon.svg.png">
+            </button>
+          </form>
+    </div>
+
+      <a href="Placement">
+        <div class="Sign_up">
+            <p>Sign up</p>
+        </div>
+      </a>
+
+      <a href="Placement">
+        <div class="Login">
+            <p>Log in</p>
+        </div>
+      </a>
+
+  	 <div class="top_box">
+  	 </div>
+  </div>
+
+  <div class="bar">
+
+   <a href="Placement" style=text-decoration:none>
+      <div class="Home">
+          <p>Home</p>
+      </div>
+    </a>
+
+    <a href="Placement" style=text-decoration:none>
+      <div class="About_us">
+          <p>About us</p>
+      </div>
+    </a>
+
+    <div class="dropdown">
+  		<button class="dropbtn">Content</button>
+  		<div class="dropdown-content">
+    		<a href="#">Link 1</a>
+   			<a href="#">Link 2</a>
+    		<a href="#">Link 3</a>
+  		</div>
+	</div>
+
+    <a href="Placement" style=text-decoration:none>
+      <div class="Gallery">
+          <p>Gallery</p>
+      </div>
+    </a>
+
+    <a href="Placement" style=text-decoration:none>
+      <div class="Discord">
+          <p>Discord</p>
+      </div>
+    </a>
+
+    <a href="Placement" style=text-decoration:none>
+      <div class="FAQ">
+          <p>FAQ</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="fixed-testing">
+</div>
+
+
+</body>
+</html>
