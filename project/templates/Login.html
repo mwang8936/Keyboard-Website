@@ -1,111 +1,132 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-<style>
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
+{% extends 'base.html' %}
+{% block extra_css %}
+
+
+.content {
+position: absolute;
+font-size: 1.8vw;
+background-color: white;
+width: 100%;
+top: 30%;
+height: 70vh;
+z-index: -2;
+text-align: center;
+font-family: Arial, sans-serif;
+
 }
 
-/* Full-width inputs */
-input[type=text], input[type=password] {
+.container_email {
+  background-color: transparent;
+  position: absolute;
+  top: 20%;
+  left: 48.9%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  width: 35%;
+}
+
+.email-field {
+  position: relative;
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  height: 4vw;
+  border: .1vw solid black;
+  border-radius: 1vw;
+  outline: none;
+  font-size: 120%;
+  margin-top: 2vw;
+  padding-left: 2vw;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
+.container_password {
+  background-color: transparent;
+  position: absolute;
+  top: 40%;
+  left: 48.9%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  width: 35%;
+}
+
+.password-field {
+  position: relative;
   width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+  height: 4vw;
+  border: .1vw solid black;
+  border-radius: 1vw;
+  outline: none;
+  font-size: 120%;
+  margin-top: 2vw;
+  padding-left: 2vw;
 }
 
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
+.container_login {
+  background-color: transparent;
+  position: absolute;
+  height: 6vw;
+  top: 65%;
+  left: 50%;
+  width: 37.2%;
+  transform: translate(-50%, -50%);
+
+  font-size: 140%;
+  font-weight: bold;
+  border: .1vw solid black;
+  border-radius: 1vw;
+  outline: none;
+  background-color: #f3bda1;
 }
 
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
+
+.centered {
+  z-index: 1;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
+.container_bottom {
+  background-color: transparent;
+  position: absolute;
+  height: 6vw;
+  top: 85%;
+  left: 50%;
+  width: 37.2%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  text-align: left;
 }
-</style>
+
+{% endblock %}
+{% block content %}
+<div class="content">
+
+    <h3  class="centered" style="font-weight: bold">LOG IN</h3>
+
+    <form action="/login" method="POST" class="form">
+
+      <div class="container_email">
+        <input type="email" name="email" placeholder="Email" class="email-field" />
+      </div>
+
+      <div class="container_password">
+        <input type="password" name="password" placeholder="Password" class="password-field" />
+      </div>
 
 
-<form action="#" method="post">
+      <button class="container_login">LOG IN</button>
 
-  <div class="container">
-    <label for="email"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required>
+      <div class="container_bottom">
+        <input type="checkbox" id="remember" name="remember_me" value="Button">
+        <label for="remember" style="font-size: 1vw;"> Remember me</label><br>
+        <p style="font-size: 1vw;">New user? <a href="{{ url_for('sign_up') }}">Sign Up</a></p>
+      </div>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    </form>
+    <div class="bottom"></div>
+</div>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification is-danger">
-        {{ messages[0] }}
-    </div>
-{% endif %}
-{% endwith %}
-</body>
-</html>
-
+{% endblock %}
