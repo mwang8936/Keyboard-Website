@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
 from .models import User
+from flask_login import login_user, logout_user, login_required, UserMixin
+from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 auth = Blueprint('auth', __name__)
 
@@ -25,7 +27,7 @@ def login_post():
 
 @auth.route('/signup')
 def signup():
-    return return_template('Sign_up.html')
+    return render_template('Sign_up.html')
 
 @auth.route('/signup', methods=['POST', 'GET'])
 def signup_post():

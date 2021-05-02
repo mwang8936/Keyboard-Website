@@ -295,7 +295,7 @@ html,body {
 <body>
 <div class="top_and_bar">
   <div class="top_wrapper">
-      <a href="{{ url_for('home') }}">
+      <a href="{{ url_for('main.home') }}">
         <div class="Logo">
             <h>EkoKeys</h>
         </div>
@@ -310,13 +310,13 @@ html,body {
           </form>
     </div>
 
-      <a href="{{ url_for('sign_up') }}">
+      <a href="{{ url_for('auth.signup') }}">
         <div class="Sign_up">
             <p>Sign up</p>
         </div>
       </a>
 
-      <a href="{{ url_for('login') }}">
+      <a href="{{ url_for('auth.login') }}">
         <div class="Login">
             <p>Log in</p>
         </div>
@@ -328,13 +328,13 @@ html,body {
 
   <div class="bar">
 
-   <a href="{{ url_for('home') }}" style="text-decoration: none">
+   <a href="{{ url_for('main.home') }}" style="text-decoration: none">
       <div class="Home">
           <p>Home</p>
       </div>
     </a>
 
-    <a href="{{ url_for('about') }}" style="text-decoration: none">
+    <a href="{{ url_for('main.about') }}" style="text-decoration: none">
       <div class="About_us">
           <p>About us</p>
       </div>
@@ -343,15 +343,15 @@ html,body {
     <div class="dropdown">
   		<button class="dropbtn">Content</button>
   		<div class="dropdown-content">
-    		<a href="{{ url_for('keyboards') }}">Keyboards</a>
-   			<a href="{{ url_for('keycaps') }}">Keycaps</a>
-    		<a href="{{ url_for('switches') }}">Switches</a>
-            <a href="{{ url_for('group_buys') }}">Group Buys</a>
-            <a href="{{ url_for('others') }}">Others</a>
+    		<a href="{{ url_for('main.keyboards') }}">Keyboards</a>
+   			<a href="{{ url_for('main.keycaps') }}">Keycaps</a>
+    		<a href="{{ url_for('main.switches') }}">Switches</a>
+            <a href="{{ url_for('main.group_buys') }}">Group Buys</a>
+            <a href="{{ url_for('main.others') }}">Others</a>
   		</div>
 	</div>
 
-    <a href="{{ url_for('gallery') }}" style="text-decoration: none">
+    <a href="{{ url_for('main.gallery') }}" style="text-decoration: none">
       <div class="Gallery">
           <p>Gallery</p>
       </div>
@@ -363,7 +363,7 @@ html,body {
       </div>
     </a>
 
-    <a href="{{ url_for('FAQ') }}" style="text-decoration: none">
+    <a href="{{ url_for('main.FAQ') }}" style="text-decoration: none">
       <div class="FAQ">
           <p>FAQ</p>
       </div>
