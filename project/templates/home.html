@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% block head %}underline{% endblock %}
+{% block extra_css %}
+
+.content {
+position: absolute;
+font-size: 1.8vw;
+background-color: white;
+width: 100%;
+top: 30%;
+height: 180vh;
+z-index: -2;
+font-family: Arial, sans-serif;
+
+}
+
+.container_img_keyboard {
+  position: absolute;
+  text-align: center;
+  color: black;
+  z-index: 0;
+  top: 6%;
+  left: 7.5vw;
+  height: 45vh;
+  width: 37vw;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 4vw;
+  overflow: hidden;
+  border: 5px solid black;
+ }
+
+.container_img_keyboard img {
+  width: 100%;
+  transition: 10s all ease-in-out;
+}
+
+.container_img_keyboard:hover img {
+  transform: scale(1.3)
+}
+
+.container_img_keycaps {
+  position: absolute;
+  text-align: center;
+  color: black;
+  z-index: 0;
+  top: 6%;
+  right: 7.5vw;
+  height: 45vh;
+  width: 37vw;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 4vw;
+  overflow: hidden;
+  border: 5px solid black;
+ }
+
+.container_img_keycaps img {
+  width: 100%;
+  transition: 10s all ease-in-out;
+}
+
+.container_img_keycaps:hover img {
+  transform: scale(1.3)
+}
+
+.container_img_switches {
+  position: absolute;
+  text-align: center;
+  color: black;
+  z-index: 0;
+  top: 36%;
+  left: 7.5vw;
+  height: 45vh;
+  width: 37vw;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 4vw;
+  overflow: hidden;
+  border: 5px solid black;
+ }
+
+.container_img_switches img {
+  width: 100%;
+  transition: 10s all ease-in-out;
+}
+
+.container_img_switches:hover img {
+  transform: scale(1.3)
+}
+
+.container_img_group_buys {
+  position: absolute;
+  text-align: center;
+  color: black;
+  z-index: 0;
+  top: 36%;
+  right: 7.5vw;
+  height: 45vh;
+  width: 37vw;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 4vw;
+  overflow: hidden;
+  border: 5px solid black;
+ }
+
+.container_img_group_buys img {
+  width: 100%;
+  transition: 10s all ease-in-out;
+}
+
+.container_img_group_buys:hover img {
+  transform: scale(1.3)
+}
+
+.container_img_other {
+  position: absolute;
+  text-align: center;
+  color: black;
+  z-index: 0;
+  top: 66%;
+  left: 7.5vw;
+  height: 45vh;
+  width: 37vw;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 4vw;
+  overflow: hidden;
+  border: 5px solid black;
+ }
+
+.container_img_other img {
+  width: 100%;
+  transition: 10s all ease-in-out;
+}
+
+.container_img_other:hover img {
+  transform: scale(1.3)
+}
+
+/* Centered text */
+.centered {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="content">
+
+    <p style="position: absolute; left: 7%; height: 10vh">Everything you need to know about mechanical keyboards and more!</p>
+
+    <a href="{{ url_for('keyboards') }}">
+        <div class="container_img_keyboard">
+            <img src="https://c4.wallpaperflare.com/wallpaper/992/845/315/shrek-wallpaper-preview.jpg"
+                 style="width:45vw; height:auto;position:absolute; left: -5vw;" >
+            <div class="centered"><p>Keyboards</p></div>
+        </div>
+    </a>
+
+     <a href="{{ url_for('keycaps') }}">
+         <div class="container_img_keycaps">
+             <img src="https://img.wallpapersafari.com/desktop/728/410/0/13/elsBJw.jpg"
+                    style="width:45vw; height:auto;position:absolute; left: -5vw;" >
+             <div class="centered"><p>Keycaps</p></div>
+        </div>
+    </a>
+
+    <a href="{{ url_for('switches') }}">
+        <div class="container_img_switches">
+            <img src="https://img.wallpapersafari.com/desktop/728/410/60/82/6z1ZHE.jpg"
+                 style="width:45vw; height:auto;position:absolute; left: -5vw;" >
+            <div class="centered"><p>Switches</p></div>
+        </div>
+    </a>
+
+    <a href="{{ url_for('group_buys') }}">
+        <div class="container_img_group_buys">
+            <img src="https://www.populationdata.net/wp-content/uploads/2020/11/Joe-Biden-pre%CC%81sident-des-E%CC%81tats-Unis-728x410.jpg"
+                 style="width:45vw; height:auto;position:absolute; left: -5vw;" >
+            <div class="centered"><p>Group Buys</p></div>
+        </div>
+    </a>
+
+    <a href="{{ url_for('others') }}">
+        <div class="container_img_other">
+            <img src="https://img.wallpapersafari.com/desktop/728/410/78/57/klUdHL.png"
+                 style="width:45vw; height:auto;position:absolute; left: -5vw;" >
+            <div class="centered"><p>Others</p></div>
+        </div>
+    </a>
+    <div class="bottom">
+
+    </div>
+</div>
+
+{% endblock %}
