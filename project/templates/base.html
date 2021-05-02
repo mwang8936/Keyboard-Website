@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+    <link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet'>
+    <title>Page Title</title>
 <style>
 #Font baumans
 @import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
@@ -39,6 +40,7 @@ display: none;
   left: 0px;
   width: 100%;
   height: 33%;
+  z-index: 1;
 }
 
 .top_wrapper {
@@ -46,19 +48,10 @@ display: none;
   background-color: white;
   top: 0px;
   left: 0px;
-  width: 100%;
+  width: 100% ;
   height: 75%;
   font-size: 1vw;
-}
 
-.top_box {
-  position: absolute;
-  background-color: transparent;
-  height:80%;
-  bottom: 0%;
-  width: 100%;
-  border-top: .2vw solid black;
-  border-bottom: .1vw solid gray;
 }
 
 .Logo {
@@ -153,6 +146,7 @@ display: none;
   position: relative;
   height: 25%;
   width: 100%;
+  left: .5%;
   background-color: transparent;
 }
 .Home {
@@ -165,21 +159,20 @@ display: none;
   background-color: transparent;
   font-size: 1.8vw;
   font-family: Arial, sans-serif;
-  text-decoration: none;
-
+  text-decoration: {% block head %}none{% endblock %};
 }
 
 .About_us {
   position:absolute;
   bottom: 0%;
-  left: 31%;
+  left: 31.5%;
   width: 10%;
   color: black;
   text-align: center;
   background-color: transparent;
   font-size: 1.8vw;
   font-family: Arial, sans-serif;
-  text-decoration: none;
+  text-decoration: {% block about %}none{% endblock %};
 }
 
 
@@ -193,13 +186,13 @@ display: none;
   background-color: transparent;
   font-size: 1.8vw;
   font-family: Arial, sans-serif;
-  text-decoration: none;
+  text-decoration: {% block gallery %}none{% endblock %};
 }
 
 .Discord {
   position:absolute;
   bottom: 0%;
-  left: 57%;
+  left: 58%;
   width: 10%;
   color: black;
   text-align: center;
@@ -219,7 +212,7 @@ display: none;
   background-color: transparent;
   font-size: 1.8vw;
   font-family: Arial, sans-serif;
-  text-decoration: none;
+  text-decoration: {% block FAQ %}none{% endblock %};
 }
 
 .dropbtn {
@@ -230,13 +223,15 @@ display: none;
   background-color: transparent;
   border: none;
   padding: 18.5%;
+  padding-top: 10%;
+  padding-bottom: 10%;
 
 }
 
 .dropdown {
   position: absolute;
-  bottom: 0%;
-  left: 40%;
+  bottom: 20%;
+  left: 40.5%;
   width: 10%;
   background-color: transparent
 }
@@ -244,8 +239,9 @@ display: none;
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: transparent;
-  min-width: 50%;
+  background-color: white;
+  left: 19%;
+  min-width: 100%;
   box-shadow: 0px .2vw .5vw gray;
   z-index: 1;
 }
@@ -255,24 +251,51 @@ display: none;
   padding: 8% 10%;
   text-decoration: none;
   display: block;
+  font-family: Arial, sans-serif;
 }
 
-.dropdown-content a:hover {background-color: gray;}
+.dropdown-content a:hover {
+background-color: white;
+transition: .2s all ease-in-out;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+display: block;
+transition: .2s all ease-in-out;}
 
-.dropdown:hover .dropbtn {background-color: gray;}
+.dropdown:hover .dropbtn {
+background-color: white;
+transition: .2s all ease-in-out;
+}
 
 .fixed-testing {
  height: 200vh;
- background-color: blue;
+ background-color: orange;
 }
+
+.bottom {
+position: relative;
+width: 100%;
+height: 20vh;
+background-color: gray;
+top: 95%;
+padding: 0px;
+margin 0px;
+}
+
+html,body {
+    margin:0;
+    padding:0;
+}
+{% block extra_css %}
+{% endblock %}
+
 </style>
 </head>
 <body>
 <div class="top_and_bar">
   <div class="top_wrapper">
-      <a href="Placement">
+      <a href="{{ url_for('home') }}">
         <div class="Logo">
             <h>EkoKeys</h>
         </div>
@@ -287,13 +310,13 @@ display: none;
           </form>
     </div>
 
-      <a href="Placement">
+      <a href="{{ url_for('sign_up') }}">
         <div class="Sign_up">
             <p>Sign up</p>
         </div>
       </a>
 
-      <a href="Placement">
+      <a href="{{ url_for('login') }}">
         <div class="Login">
             <p>Log in</p>
         </div>
@@ -305,13 +328,13 @@ display: none;
 
   <div class="bar">
 
-   <a href="Placement" style=text-decoration:none>
+   <a href="{{ url_for('home') }}" style="text-decoration: none">
       <div class="Home">
           <p>Home</p>
       </div>
     </a>
 
-    <a href="Placement" style=text-decoration:none>
+    <a href="{{ url_for('about') }}" style="text-decoration: none">
       <div class="About_us">
           <p>About us</p>
       </div>
@@ -320,25 +343,27 @@ display: none;
     <div class="dropdown">
   		<button class="dropbtn">Content</button>
   		<div class="dropdown-content">
-    		<a href="#">Link 1</a>
-   			<a href="#">Link 2</a>
-    		<a href="#">Link 3</a>
+    		<a href="{{ url_for('keyboards') }}">Keyboards</a>
+   			<a href="{{ url_for('keycaps') }}">Keycaps</a>
+    		<a href="{{ url_for('switches') }}">Switches</a>
+            <a href="{{ url_for('group_buys') }}">Group Buys</a>
+            <a href="{{ url_for('others') }}">Others</a>
   		</div>
 	</div>
 
-    <a href="Placement" style=text-decoration:none>
+    <a href="{{ url_for('gallery') }}" style="text-decoration: none">
       <div class="Gallery">
           <p>Gallery</p>
       </div>
     </a>
 
-    <a href="Placement" style=text-decoration:none>
+    <a href="https://discord.gg/vVdKrv72" style="text-decoration: none">
       <div class="Discord">
           <p>Discord</p>
       </div>
     </a>
 
-    <a href="Placement" style=text-decoration:none>
+    <a href="{{ url_for('FAQ') }}" style="text-decoration: none">
       <div class="FAQ">
           <p>FAQ</p>
       </div>
@@ -347,9 +372,10 @@ display: none;
   </div>
 </div>
 
-<div class="fixed-testing">
+{% block content %}
+<div class="bottom">
 </div>
-
+{% endblock %}
 
 </body>
 </html>
