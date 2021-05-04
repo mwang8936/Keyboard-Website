@@ -40,7 +40,7 @@ def signup_post():
 
     if user:
         flash('Email address already exists!')
-        return redirect(url_for('auth.login')) #redirect user to login page if email already exists
+        return redirect(url_for('auth.signup')) #redirect user to login page if email already exists
     
     new_user = User(email=email, first_name=first_name, last_name=last_name, password = generate_password_hash(password, method='sha256'))
 
@@ -54,5 +54,5 @@ def signup_post():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('main.logout'))
+    return render_template('logout.html')
     

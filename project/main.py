@@ -59,8 +59,3 @@ def others():
 @main.route("/profile")
 def profile():
     return render_template("profile.html")
-
-@main.route("/Logout")
-@main.route("/logout")
-def logout():
-    return render_template("logout.html")

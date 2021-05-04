@@ -117,7 +117,13 @@ font-family: Arial, sans-serif;
 <div class="content">
 
     <h3  class="centered" style="font-weight: bold">LOG IN</h3>
-
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
     <form action="/login" method="POST" class="form">
 
       <div class="container_email">
@@ -134,7 +140,7 @@ font-family: Arial, sans-serif;
       <div class="container_bottom">
         <input type="checkbox" id="remember" name="remember_me" value="Button">
         <label for="remember" style="font-size: 1vw;"> Remember me</label><br>
-        <p style="font-size: 1vw;">New user? <a href="{{ url_for('sign_up') }}">Sign Up</a></p>
+        <p style="font-size: 1vw;">New user? <a href="{{ url_for('auth.signup') }}">Sign Up</a></p>
       </div>
 
     </form>
