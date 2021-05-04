@@ -1,6 +1,6 @@
 from flask import Blueprint, Flask, redirect, url_for, render_template, request, session, flash
 from . import db
-from flask_login import login_required, current_user
+from flask_login import login_required, current_user, logout_user
 
 main = Blueprint('main', __name__)
 
@@ -54,3 +54,8 @@ def group_buys():
 @main.route("/others")
 def others():
     return render_template("base.html")
+
+@main.route("/Profile")
+@main.route("/profile")
+def profile():
+    return render_template("profile.html")
