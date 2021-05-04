@@ -35,6 +35,12 @@ def signup_post():
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     password = request.form.get('password')
+    password_check = request.form.get('password1')
+
+
+    if password is not password_check:
+        flash('Password must be the same!')
+        return redirect(url_for('auth.signup'))
 
     user = User.query.filter_by(email=email).first()
 

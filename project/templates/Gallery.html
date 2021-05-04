@@ -1,2 +1,168 @@
 {% extends 'base.html' %}
 {% block gallery %}underline{% endblock %};
+{% block extra_css %}
+.gallery_wrap {
+width: 100%;
+height: 200vw;
+position: absolute;
+font-size: 1.8vw;
+background-color: blue;
+width: 100%;
+top: 10vw;
+height: 250vw;
+z-index: -2;
+font-family: Arial, sans-serif;
+}
+
+.writing {
+position: absolute;
+width: 90%;
+left: 5%;
+height: 5vw;
+top: 2.5vw;
+background-color: red;
+border-bottom: .1vw solid black;
+}
+
+.keyboard {
+position: absolute;
+width: 27%;
+height: 17vw;
+background-color: purple;
+}
+
+.keycaps {
+position: absolute;
+width: 41%;
+height: 30.5vw;
+background-color: purple;
+}
+
+.bottom {
+    position: relative;
+    width: 100%;
+    height: 9.8vw;
+    background-color: gray;
+    top: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+{% endblock %}
+{% block content %}
+<div class="gallery_wrap">
+
+    <div class="writing">
+        <h3 style="font-weight: bold; font-size:135%; position: relative; top: -1vw;">Keyboards</h3>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="keyboard" style="top: 8vw; left: 50%; transform: translate(-50%,0%);" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keyboard" style="top: 8vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keyboard" style="top: 8vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="keyboard" style="top: 27.5vw; left: 50%; transform: translate(-50%,0%);" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keyboard" style="top: 27.5vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keyboard" style="top: 27.5vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="keyboard" style="top: 47vw; left: 50%; transform: translate(-50%,0%);" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keyboard" style="top: 47vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keyboard" style="top: 47vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+
+    <div class="writing" style="top: 70vw;">
+        <h3 style="font-weight: bold; font-size:135%; position: relative; top: -1vw;">Keycaps</h3>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="keycaps" style="top: 75.5vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keycaps" style="top: 75.5vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="keycaps" style="top: 108.5vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keycaps" style="top: 108.5vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="keycaps" style="top: 141.5vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keycaps" style="top: 141.5vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <!-- ROW 4 -->
+    <div class="keycaps" style="top: 174.5vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keycaps" style="top: 174.5vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <!-- ROW 4 -->
+    <div class="keycaps" style="top: 207.5vw; right: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="keycaps" style="top: 207.5vw; left: 5%;" >
+        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+    </div>
+
+    <div class="bottom"></div>
+</div>
+{% endblock %}
