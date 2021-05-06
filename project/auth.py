@@ -4,6 +4,7 @@ from .models import User
 from flask_login import login_user, logout_user, login_required, UserMixin
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
+
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
@@ -36,9 +37,9 @@ def signup_post():
     last_name = request.form.get('last_name')
     password = request.form.get('password')
     password_check = request.form.get('password1')
+    
 
-
-    if password is not password_check:
+    if (password != password_check):
         flash('Password must be the same!')
         return redirect(url_for('auth.signup'))
 
