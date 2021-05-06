@@ -6,7 +6,7 @@ width: 100%;
 height: 200vw;
 position: absolute;
 font-size: 1.8vw;
-background-color: blue;
+background-color: white;
 width: 100%;
 top: 10vw;
 height: 250vw;
@@ -20,7 +20,7 @@ width: 90%;
 left: 5%;
 height: 5vw;
 top: 2.5vw;
-background-color: red;
+background-color: white;
 border-bottom: .1vw solid black;
 }
 
@@ -28,14 +28,44 @@ border-bottom: .1vw solid black;
 position: absolute;
 width: 27%;
 height: 17vw;
-background-color: purple;
+background-color: white;
+}
+
+.keyboard_img {
+width: 100%;
+height: 78%;
+overflow: hidden;
+background-color: white;
+}
+
+.keyboard_img img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .keycaps {
 position: absolute;
 width: 41%;
 height: 30.5vw;
-background-color: purple;
+background-color: white;
+}
+
+.keycaps_img {
+width: 100%;
+height: 88%;
+overflow: hidden;
+background-color: white;
+}
+
+.keycaps_img img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .bottom {
@@ -47,6 +77,7 @@ background-color: purple;
     padding: 0px;
     margin: 0px;
 }
+
 {% endblock %}
 {% block content %}
 <div class="gallery_wrap">
@@ -57,50 +88,69 @@ background-color: purple;
 
     <!-- ROW 1 -->
     <div class="keyboard" style="top: 8vw; left: 50%; transform: translate(-50%,0%);" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://cdn.shopify.com/s/files/1/0254/4648/1966/files/Iron_165_Cafe_2019-Jul-02_11-59-24PM-000_CustomizedView13891697985_300x.png?v=1593719383"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Smith + Runes Iron 165</h3>
     </div>
 
     <div class="keyboard" style="top: 8vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://i.ibb.co/z2LLqnN/tgr.jpg"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">TGR-Jane V2 CE</h3>
     </div>
 
     <div class="keyboard" style="top: 8vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://preview.redd.it/l4z6n2k0dc451.png?width=4000&format=png&auto=webp&s=7d557e7252fc71da92a33f1277648014b0f86b3f
+"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Gray Studio Think6.5 V2</h3>
     </div>
 
     <!-- ROW 2 -->
     <div class="keyboard" style="top: 27.5vw; left: 50%; transform: translate(-50%,0%);" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://i.postimg.cc/fRHcZTm2/Sat-Top.jpg"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Satisfaction 75</h3>
     </div>
 
     <div class="keyboard" style="top: 27.5vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://i.ibb.co/J791dmW/mercury.jpg"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Mercury 65</h3>
     </div>
 
     <div class="keyboard" style="top: 27.5vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://i.ibb.co/HCnvkZm/maja.png"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Maja</h3>
     </div>
 
     <!-- ROW 3 -->
     <div class="keyboard" style="top: 47vw; left: 50%; transform: translate(-50%,0%);" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://i.ibb.co/CpyVVqh/serratus.jpg"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Serratus</h3>
     </div>
 
     <div class="keyboard" style="top: 47vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://cdn.shopify.com/s/files/1/0061/5687/7924/files/IMG_1071_480x480.jpg?v=1611736763"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">Unikorn 60</h3>
     </div>
 
     <div class="keyboard" style="top: 47vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://cdn.shopify.com/s/files/1/0217/1948/2468/products/TIM_20200710105903_1400x700.jpg?v=1594446450"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keyboard_img">
+            <img src="https://images.squarespace-cdn.com/content/v1/5f68da90297b94613c756dd6/1600889124556-9QXVIPNGTY6EODZMZENW/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/LXI01837.jpg?format=1500w"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -50%); font-weight: normal;">TGR Polycarbonate Alice</h3>
     </div>
 
 
@@ -110,57 +160,79 @@ background-color: purple;
 
     <!-- ROW 1 -->
     <div class="keycaps" style="top: 75.5vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img style="height: 100%; width: auto;" src="https://i.ibb.co/fqY5dKW/daifukuk.png"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">GMK Daifuku</h3>
     </div>
 
     <div class="keycaps" style="top: 75.5vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  src="https://www.oliviaplus.plus/kits/light.jpg
+"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">GMK Olivia++ Light</h3>
     </div>
 
     <!-- ROW 2 -->
     <div class="keycaps" style="top: 108.5vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  src="https://i.ibb.co/Dtqm6dV/noel.png"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">GMK Noel</h3>
     </div>
 
     <div class="keycaps" style="top: 108.5vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  style="height: 100%; width: auto;" src="https://cdn.shopify.com/s/files/1/0865/5368/products/wJEkB6B_799x449.jpg?v=1612144981"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">GMK Birch</h3>
     </div>
 
     <!-- ROW 3 -->
     <div class="keycaps" style="top: 141.5vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  src="https://geekhack.org/index.php?action=dlattach;topic=107748.0;attach=254836;image"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">JTK Night Sakura</h3>
     </div>
 
     <div class="keycaps" style="top: 141.5vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  style="height: 100%; width: auto;" src="https://i.ibb.co/7b9SY6P/sinper.png"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">ePBT Sniper</h3>
     </div>
 
     <!-- ROW 4 -->
     <div class="keycaps" style="top: 174.5vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  src="https://i.ibb.co/L97wQB2/lancelot.jpg"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">PBT Lancelot</h3>
     </div>
 
     <div class="keycaps" style="top: 174.5vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  style="height: 100%; width: auto;" src="https://ucarecdn.com/3c3f1b5d-f684-4919-af53-73e326a12583~1/nth/0/-/format/auto/-/quality/lighter/"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">GMK Mizu</h3>
     </div>
 
-    <!-- ROW 4 -->
+    <!-- ROW 5 -->
     <div class="keycaps" style="top: 207.5vw; right: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  src="
+https://cdn.shopify.com/s/files/1/2772/6534/products/BaseKit_71ef04b9-1a73-4d02-9b3c-257871b8c59f_600x600.png?v=1600739401"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">SA Night Light</h3>
     </div>
 
     <div class="keycaps" style="top: 207.5vw; left: 5%;" >
-        <img style="width: 100%; height: auto" src="https://i.pinimg.com/originals/c7/cd/f1/c7cdf1a372ebe4e3e5bf39d8f1b71377.jpg"></img>
-        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">TGR Polycarbonate Alice</h3>
+        <div class="keycaps_img">
+            <img  style="height: 100%; width: auto;" src="https://www.ashkeebs.com/wp-content/uploads/2021/02/dsa-nature-witch_core-kit_flatlay_render_labeled-scaled.jpg"></img>
+        </div>
+        <h3 style="bottom: 0%; transform: translate(0%, -75%); font-weight: normal;">DSA Nature Witch</h3>
     </div>
 
     <div class="bottom"></div>
