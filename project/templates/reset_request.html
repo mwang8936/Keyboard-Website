@@ -89,10 +89,33 @@ font-family: Arial, sans-serif;
     }
 }
 
+.elementToFadeInAndOut {
+
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
 {% endblock %}
 {% block content %}
 <div class="content">
     <div class="centered">Enter Email</div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="elementToFadeInAndOut">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
     <form action="" method="POST" class="form">
 
       <div class="container_email">
