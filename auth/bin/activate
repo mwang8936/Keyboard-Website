@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/vagrant/Desktop/Keyboard-Website/auth"
+VIRTUAL_ENV="/home/vagrant/Desktop/kbwebsite/Keyboard-Website/auth"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

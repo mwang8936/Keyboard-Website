@@ -6,11 +6,11 @@ from flask_login import current_user
 from .models import User
 
 class RegistrationForm(FlaskForm):
-    first_name = StringField('First Name', validators=[DataRequired(), Length(min=1, max=20)])
-    last_name = StringField('Last Name', validators=[DataRequired(), Length(min=1, max=20)])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    first_name = StringField('first_name', validators=[DataRequired(), Length(min=1, max=20)])
+    last_name = StringField('last_name', validators=[DataRequired(), Length(min=1, max=20)])
+    email = StringField('email', validators=[DataRequired(), Email()])
+    password = PasswordField('password', validators=[DataRequired()])
+    confirm_password = PasswordField('password1', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
     def valid_email(self, email):
@@ -20,13 +20,13 @@ class RegistrationForm(FlaskForm):
         
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember = BooleanField('Remember Me')
+    email = StringField('email', validators=[DataRequired(), Email()])
+    password = PasswordField('password', validators=[DataRequired()])
+    remember = BooleanField('remember')
     submit = SubmitField('Login')
 
 class RequestResetForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
+    email = StringField('email', validators=[DataRequired(), Email()])
     submit = SubmitField('Request Password Reset')
 
     def valiate_email(self,email):
@@ -35,6 +35,6 @@ class RequestResetForm(FlaskForm):
             raise ValidationError('There is no account related to that email, please sign up first')
 
 class ResetPasswordForm(FlaskForm):
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    password = PasswordField('password', validators=[DataRequired()])
+    confirm_password = PasswordField('password1', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')

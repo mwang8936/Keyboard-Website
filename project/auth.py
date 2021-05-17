@@ -1,9 +1,10 @@
+
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db, bcrypt
 from .models import User
 from flask_login import login_user, logout_user, login_required, UserMixin, current_user
 from .models import User
-from .forms import RegistrationForm, LoginForm, RegistrationForm, ResetPasswordForm
+#from .forms import RegistrationForm, LoginForm, RequestResetForm, ResetPasswordForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from .utils import send_reset_email
 
@@ -15,6 +16,7 @@ def login():
 
 @auth.route('/login', methods=['POST', 'GET'])
 def login_post():
+    """
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
     form = LoginForm()
@@ -26,18 +28,28 @@ def login_post():
         else:
             flash('Invalid credentials, please check your email and password')
             return redirect(url_for('auth.login'))
+    return render_template('Login.html')
+    """
 
 
+    email = request.form.get('email')
+    password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
 
-    #email = request.form.get('email')
-    #password = request.form.get('password')
-    #remember = True if request.form.get('remember') else False
-#
-    #user = User.query.filter_by(email=email).first()
+    user = User.query.filter_by(email=email).first()
 
-    #if not user or not check_password_hash(user.password, password):
-    #    flash('Incorrect password, please try again.')
-    #    return redirect(url_for('auth.login'))
+    if user:
+        if (bcrypt.check_password_hash(user.password, password)):
+            login_user(user, remember=remember)
+            return redirect(url_for('main.home'))
+        else:
+            flash('Incorrect password, please try again.')
+            return redirect(url_for('auth.login'))
+    else:
+        flash('Invalid email address, please try again or sign up first.')
+        return redirect(url_for('auth.login'))
+    #if not user or not bcrypt.check_password_hash(user.password, password):
+
 
     #login_user(user, remember=remember)
     #return redirect(url_for('main.home'))
@@ -50,6 +62,7 @@ def signup():
 
 @auth.route('/signup', methods=['POST', 'GET'])
 def signup_post():
+    """
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
 
@@ -61,33 +74,33 @@ def signup_post():
         db.session.commit()
         flash('You account has been registered!')
         return redirect(url_for('auth.login'))
-
-    #email = request.form.get('email')
-    #first_name = request.form.get('first_name')
-    #last_name = request.form.get('last_name')
-    #password = request.form.get('password')
-    #password_check = request.form.get('password1')
+    """
+    email = request.form.get('email')
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    password = request.form.get('password')
+    password_check = request.form.get('password1')
     
-    #if(email == null):
-    #    flash("Please enter a valid email address!")                                                                                                                                                                                             
-    #    return redirect(url_for('auth.signup'))
+    if(email == None):
+        flash("Please enter a valid email address!")                                                                                                                                                                                             
+        return redirect(url_for('auth.signup'))
 
-    #if (password != password_check):
-    #    flash('Password must be the same!')
-    #    return redirect(url_for('auth.signup'))
+    if (password != password_check):
+        flash('Password must be the same!')
+        return redirect(url_for('auth.signup'))
 
-    #user = User.query.filter_by(email=email).first()
+    user = User.query.filter_by(email=email).first()
 
-    #if user:
-    #    flash('Email address already exists!')
-    #    return redirect(url_for('auth.login')) #redirect user to login page if email already exists
+    if user:
+        flash('Email address already exists!')
+        return redirect(url_for('auth.login')) #redirect user to login page if email already exists
     
-    #new_user = User(email=email, first_name=first_name, last_name=last_name, password = generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, first_name=first_name, last_name=last_name, password = bcrypt.generate_password_hash(password).decode('utf-8'))
 
-    #db.session.add(new_user)
-    #db.session.commit()  
+    db.session.add(new_user)
+    db.session.commit()  
 
-    #return redirect(url_for('auth.login'))
+    return redirect(url_for('auth.login'))
 
 
 @auth.route('/logout')
@@ -96,10 +109,29 @@ def logout():
     logout_user()
     return render_template('logout.html')
 
-@auth.route('/reset_password', methods=['POST', 'GET'])
+
+@auth.route('/reset_password')
 def reset_request():
+    return render_template('reset_request.html')
+
+@auth.route('/reset_password', methods=['POST', 'GET'])
+def reset_request_post():
+    email = request.form.get('email')
+    user = User.query.filter_by(email=email).first()
+    
+    if user:
+        send_reset_email(user)
+        flash("An email has been sent with instructions to reset your password.")
+        return redirect(url_for('auth.reset_request'))
+    else:
+        flash("There is no account associated with that email address, please sign up first.")
+        return redirect(url_for('auth.reset_request'))
+
+    """
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
+    
+   
     form = RequestResetForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
@@ -107,9 +139,32 @@ def reset_request():
         flash("An email has been sent with instructions to reset your password.")
         return redirect(url_for('users.login'))
     return render_template('reset_request.html')
+    """
+
+@auth.route('/reset_password/<token>')
+def reset_token(token):
+    return render_template('reset_token.html')
 
 @auth.route('/reset_password/<token>', methods=['POST', 'GET'])
-def reset_token(token):
+def reset_token_post(token):
+    user = User.verify_reset_toke(token)
+
+    if user is None:
+        flash('This is an invalid or expired link')
+        return redirect(url_for('auth.reset_request'))
+    password = request.form.get('password')
+    password_check = request.form.get('password1')
+
+    if (password != password_check):
+        flash("password must be the same.")
+        return redirect(url_for('auth.reset_token'))
+    user.password = bcrypt.generate_password_hash(password).decode('utf=8')
+    db.session.commit()
+    flash('Your password has been updated')
+    return redirect(url_for('auth.login'))
+
+
+    """
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
 
@@ -122,7 +177,8 @@ def reset_token(token):
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user.password = hashed_password
-        dbsession.commit()
+        db.session.commit()
         flash('Your password has been updated!')
         return redirect(url_for('auth.login'))
     return render_template('reset_token.html')
+    """
