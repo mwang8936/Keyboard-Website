@@ -1,0 +1,116 @@
+
+{% extends 'base.html' %}
+
+{% block extra_css %}
+.content {
+position: absolute;
+font-size: 1.8vw;
+background-color: white;
+width: 100%;
+top: 14.7vw;
+height: 30vw;
+z-index: -2;
+text-align: center;
+font-family: Arial, sans-serif;
+}
+
+.container_email {
+  background-color: transparent;
+  position: absolute;
+  top: 25%;
+  left: 48.9%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  width: 35%;
+}
+
+.email-field {
+  position: relative;
+  width: 100%;
+  height: 4vw;
+  border: .1vw solid black;
+  border-radius: 1vw;
+  outline: none;
+  font-size: 120%;
+  margin-top: 2vw;
+  padding-left: 2vw;
+}
+
+.container_login {
+  background-color: transparent;
+  position: absolute;
+  height: 6vw;
+  top: 70%;
+  left: 50%;
+  width: 37.2%;
+  transform: translate(-50%, -50%);
+
+  font-size: 140%;
+  font-weight: bold;
+  border: .1vw solid black;
+  border-radius: 1vw;
+  outline: none;
+  background-color: #f3bda1;
+}
+
+.container_bottom {
+  background-color: transparent;
+  position: absolute;
+  height: 6vw;
+  top: 90%;
+  left: 50%;
+  width: 37.2%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  text-align: left;
+}
+
+.centered {
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  font-size: 3vw;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-height: 53.1vw) {
+    .bottom {
+        position: fixed;
+        width: 100%;
+        height: 9.8vw;
+        background-color: gray;
+        top: 100%;
+        margin-top:-9.8vw;
+        margin-bottom:9.8vw;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="centered">Change Password</div>
+    <form action="" method="POST" class="form">
+
+      <div class="container_email">
+        <input type="password" name="password" placeholder="Password" class="email-field" />
+      </div>
+
+        <div class="container_email" style="top: 45%;">
+        <input type="password" name="password1" placeholder="Confirm Password" class="email-field" />
+      </div>
+      <button class="container_login">Submit</button>
+
+      <div class="container_bottom">
+        <p style="font-size: 1vw;">New user? <a href="{{ url_for('auth.signup') }}">Sign Up</a></p>
+          <p style="font-size: 1vw;">Already have an account? <a href="{{ url_for('auth.login') }}">Log in</a></p>
+      </div>
+
+    </form>
+    <div class="bottom"></div>
+</div>
+
+{% endblock %}
