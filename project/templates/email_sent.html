@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+.content {
+position: absolute;
+font-size: 1.8vw;
+background-color: white;
+width: 100%;
+top: 14.7vw;
+height: 34.4vw;
+z-index: -2;
+text-align: center;
+font-family: Arial, sans-serif;
+}
+.centered {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  font-size: 1.5vw;
+  text-align: left
+}
+
+@media screen and (min-height: 57.1vw) {
+    .bottom {
+        position: fixed;
+        width: 100%;
+        height: 9.8vw;
+        background-color: gray;
+        top: 100%;
+        margin-top:-9.8vw;
+        margin-bottom:9.8vw;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="centered">An email has been sent. Please check your inbox for further instructions</div>
+    <div class="bottom"> </div>
+</div>
+{% endblock %}
