@@ -59,3 +59,20 @@ def others():
 @main.route("/profile")
 def profile():
     return render_template("profile.html")
+
+@main.route('/search', methods=['GET', 'POST'])
+def search():
+    query = request.form.get('search')
+    if (query == "keycaps") or (query == "Keycaps"):
+        return render_template("Keycaps.html")
+    elif (query == "keyboards") or (query == "Keyboards"):
+        return render_template("Keyboards.html")
+    elif (query == "switches") or (query == "Switches"):
+        return render_template("Switches.html")
+    elif (query == "group buys") or (query == "Group buys"):
+        return render_template("Group_buys.html")
+    elif (query == "account") or (query == "profile"):
+        return render_template("profile.html")
+    elif (query == "forgot password") or (query == "Forgot password"):
+        return render_template("reset_request.html")
+    return render_template("no_result.html")
