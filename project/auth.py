@@ -190,7 +190,8 @@ def reset_token_post(token):
 @auth.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html')
+    user_email = current_user.email
+    return render_template('profile.html', current_email=user_email)
 
 @auth.route('/profile', methods=['POST', 'GET'])
 @login_required
@@ -199,12 +200,18 @@ def profile_post():
     user_email = current_user.email
     new_email = request.form.get('new_email')
     confirm_email = request.form.get('confirm_email')
-    if (new_email != confirm_email):
+
+    if (new_email == None):
+        current_user.email = user_email
+
+    elif (new_email != confirm_email):
         flash("email address must be the same.")
         return render_template('profile.html')
-    current_user.email = confirm_email
-    db.session.commit()
-    flash('Your email address has been updated.')
+    else:
+        current_user.email = confirm_email
+        db.session.commit()
+        flash('Your email address has been updated.')
+        return redirect(url_for("auth.profile_post"))
 
     current_password = request.form.get('current_password')
 
@@ -221,5 +228,5 @@ def profile_post():
     else:
         flash('Incorrect password, please try again.')
         return redirect(url_for('auth.profile_post'))
-            
-    return render_template('profile.html', current_email=user_email)
+
+    return redirect(url_for('auth.profile_post'))
