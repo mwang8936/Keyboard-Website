@@ -201,6 +201,11 @@ def profile_post():
     new_email = request.form.get('new_email')
     confirm_email = request.form.get('confirm_email')
 
+    user = User.query.filter_by(email=new_email).first()
+    if user:
+        flash('Email address already exists!')
+        return redirect(url_for('auth.profile_post')) #redirect user to login page if email already exists
+
     if (new_email == None):
         current_user.email = user_email
 

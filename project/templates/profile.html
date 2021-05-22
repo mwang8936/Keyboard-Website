@@ -69,12 +69,33 @@ z-index: 0;
   overflow: hidden;
 }
 
+.elementToFadeInAndOut {
+
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
 
 {% endblock %}
 
 {% block content %}
 <div class="container">
-
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="elementToFadeInAndOut">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
     <div class="Account_info">
         <p style="position: absolute; top: -25%; left: 7%;">Account Information</p>
     </div>
