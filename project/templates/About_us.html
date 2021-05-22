@@ -1,2 +1,122 @@
 {% extends 'base.html' %}
-{% block about %}underline{% endblock %};
+{% block about %}underline{% endblock %}
+
+{% block extra_css %}
+
+
+.content{
+position: relative;
+height: 108.8vw;
+top: 13.7vw;
+}
+
+.block {
+position: relative;
+height: 33vw;
+}
+
+.text-left {
+position: absolute;
+height: 100%;
+left: 0%;
+width: 60%;
+font-size: 1.5vw;
+}
+
+.text-right {
+position: absolute;
+height: 100%;
+right: 0%;
+width: 60%;
+font-size: 1.5vw;
+}
+
+.image-right {
+position: absolute;
+right: 5%;
+top: 50%;
+height: 75%;
+width: 30%;
+overflow: hidden;
+transform: translate(0%,-50%);
+}
+
+.image-left {
+position: absolute;
+left: 5%;
+top: 50%;
+height: 75%;
+width: 30%;
+overflow: hidden;
+transform: translate(0%,-50%);
+}
+
+.image-left img {
+width: 100%;
+height: auto;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%)
+}
+
+.image-right img {
+width: 100%;
+height: auto;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%)
+}
+
+@media screen and (min-height: 122.5vw) {
+    .bottom {
+        position: fixed;
+        width: 100%;
+        height: 9.8vw;
+        background-color: gray;
+        top: 100%;
+        margin-top:-9.8vw;
+        margin-bottom:9.8vw;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+
+@media screen and (max-height: 122.5vw) {
+    .bottom {
+        top: 0%;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="block">
+        <div class="text-left">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="image-right">
+            <img src="https://c4.wallpaperflare.com/wallpaper/992/845/315/shrek-wallpaper-preview.jpg"
+                 style="width:auto; height:120%;position:absolute;" >
+        </div>
+    </div>
+    <div class="block">
+        <div class="text-right">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="image-left">
+            <img src="https://c4.wallpaperflare.com/wallpaper/992/845/315/shrek-wallpaper-preview.jpg"
+                 style="width:auto; height:120%;position:absolute;" >
+        </div>
+    </div>
+    <div class="block">
+        <div class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="image-right">
+            <img src="https://c4.wallpaperflare.com/wallpaper/992/845/315/shrek-wallpaper-preview.jpg"
+                 style="width:auto; height:120%;position:absolute;" >
+        </div>
+    </div>
+
+    <footer class="bottom" style="font-size: 1vw;">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    </footer>
+</div>
+{% endblock %}
